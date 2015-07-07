@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ProjekatModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="tbl_Komentar">
+    <Key>
+      <PropertyRef Name="IDKom" />
+    </Key>
+    <Property Name="IDKom" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Korisnicko_ime" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Datum" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Sadrzaj" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Br_plus" Type="Int32" Nullable="false" />
+    <Property Name="Br_minus" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="ProjekatEntities2" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tbl_Komentar" EntityType="Self.tbl_Komentar" />
+  </EntityContainer>
+</Schema>

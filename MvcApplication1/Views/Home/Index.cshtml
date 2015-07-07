@@ -1,0 +1,85 @@
+﻿@using MvcApplication1.Scripts.Models;
+
+@{
+    ViewBag.Title = "Home Page";
+   // Layout = "~/Views/Shared/_Layout.cshtml";
+      //treba umjesto @model MvcApplication1.Scripts.Models.Home dodati
+      //@model IEnumberable<MvcApplication1.Scripts.Models.Home>
+      //prije dtaga <div> dodati @foreach( Home kom in @Model){}
+}
+@foreach (var m in ViewBag.Model)
+{
+<div id="main_content" class="fixed">
+   <h3 class="marginT_10 marginB_10">Poslednji komentari</h3>
+    <div class="fixed">
+        <div id="comments_wrap">
+            <a id="ostali"><!-- --></a>
+               <div class="comment_box fixed  " style="">
+                  <span class="right"></span>
+
+                   <div class="comment_info fixed" id="tooltip">
+                        <a title="Prijavi zloupotrebu!" align="right" href="" id="report_button_15683046" class=" abuse fixed " onclick="prikaziDijalog()">
+                            <span class="abuse_icon"></span>
+                            <span class="abuse_text">Prijavi komentar</span>
+                            <pseudo:after></pseudo:after>
+                        </a>
+                        <div class="left marginR_10"></div>
+
+                        <div class="comm_u_name left">
+                            <span class="">@m.Korisnicko_ime</span>
+                            <br />
+                            <span class="u_info">@m.Datum</span>
+                            <br />
+                            <div class="nonreg">neregistrovan korisnik</div>
+                            <br />
+                         </div>
+                    <pseudo:after></pseudo:after>
+                </div>
+
+                <div class="comm_text">@m.Sadrzaj</div>
+                <div class="clearfix"><!-- --></div>
+                
+                   <div class="vote_action_wrap fixed">
+                    <div id="vote_wrap_15683046" class="vote_wrap fixed left">
+                        <div class="left marginR_5">Preporuka:</div>
+                        <div class="voteplus left">
+                            <span class="left" id="vote_p_15683046"> </span>
+                            <a class="" id="vote_up_15683046" href="" title="Oceni komenar pozitivno"></a>
+                        </div>
+                        <div class="voteminus left">
+                            <span class="comment_minus" id="vote_n_15683046"></span>
+                                <a class="" id="vote_down_15683046" href="" title="Oceni komenar negativno"></a>
+                        </div>
+                    </div>
+                       <a title="Odgovori" href="#" onclick="pokazi_div()" class="button2 reply_button right"><span>Odgovori</span></a>
+                </div>
+                <div class="clearfix"><!-- --></div>
+                   <!--unos komentara-->
+                <div class="reply_box" id="replayBox" style="display:none;">
+                    <div class="comment_reply fixed">
+                        <!--div za ime i textbox-->
+                        <div class="c_input_wrap">
+                            <strong>Ime:</strong>
+                            <br>
+                            <input style="width: 438px;" class="inputStyle" type="text" id="username">
+                        </div>
+
+                        <div class="charsLeft right"><span id="charsLefty15683046">0/1500</span> karaktera</div>
+                        <!--polje za komentar-->
+                        <div class="c_input_wrap">
+                            <strong>Komentar:</strong>
+                            <br>
+                            <textarea rows="7" class="text_box" style="width: 438px;" id="comment"></textarea>
+                        </div>
+                        <a href="#" onclick="" class="button2 right"><span>Pošalji odgovor</span></a>
+                        <pseudo:after></pseudo:after>
+                    </div>
+
+                </div>
+            </div>
+            <pseudo:after></pseudo:after>
+        </div>
+
+    </div>
+</div>    
+}

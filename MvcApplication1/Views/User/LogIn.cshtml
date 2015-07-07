@@ -1,0 +1,26 @@
+﻿@model MvcApplication1.Scripts.Models.UserModel
+
+@{
+    ViewBag.Title = "LogIn";
+}
+
+<h2>Logujte se</h2>
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")"></script>
+
+@using (@Html.BeginForm())
+{
+        <div class="marginB_5 fixed paddingTB_10px borderB">
+            @Html.Label("Korisnicko ime")
+            @Html.TextAreaFor(m => m.Username)
+            <pseudo:after></pseudo:after>
+        </div>
+        <div class="marginB_5 fixed paddingTB_10px borderB">
+            @Html.Label("Lozinka")
+            @Html.PasswordFor(m => m.Password)
+            <pseudo:after></pseudo:after>
+        </div>
+        <input type="submit" value="Log in" />
+    
+    @Html.ValidationSummary()
+}
